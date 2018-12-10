@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ScrollView } from 'react-native';
 import AppStyle from '../../../theme/styles';
 import GroupList from '../../../components/ProjectListItem';
-import Dialog from '../../../components/Dialog';
+import Dialog from '../../../components/Dialog'
 
 class ProjectList extends Component {
   static componentName = 'ProjectList';
