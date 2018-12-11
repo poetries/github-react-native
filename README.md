@@ -1,7 +1,7 @@
-Github移动客户端（适配IOS、Android）
+Github客户端
 ---
 
-> Use react Native build a Github Client for mobile，Based on https://github.com/crazycodeboy/GitHubPopular
+> 使用`React native`开发`GitHub`客户端，适配`IOS`、`Android`。
 
 功能
 ---

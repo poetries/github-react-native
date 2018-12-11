@@ -1,10 +1,9 @@
 import {CALL_API} from '../middleware/api'
 
-export const FETCH_GITHUB_LIST_REQUEST = ' FETCH_GITHUB_LIST_REQUEST'
+export const  FETCH_GITHUB_LIST_REQUEST = ' FETCH_GITHUB_LIST_REQUEST'
 export const  FETCH_GITHUB_LIST_SUCCESS = ' FETCH_GITHUB_LIST_SUCCESS'
 export const  FETCH_GITHUB_LIST_FAILURE = ' FETCH_GITHUB_LIST_FAILURE'
-export const fetchGithubList = (searchKey,onSuccess) => (dispatch,getState) => {
-	
+export const fetchGithubList = (searchKey) => (dispatch,getState) => {
 	return dispatch( {
 		[CALL_API] : {
 			types : [FETCH_GITHUB_LIST_REQUEST, FETCH_GITHUB_LIST_SUCCESS, FETCH_GITHUB_LIST_FAILURE],
@@ -17,5 +16,5 @@ export const fetchGithubList = (searchKey,onSuccess) => (dispatch,getState) => {
                 }
 			}
 		}
-	}).then(onSuccess)
+	})
 }
