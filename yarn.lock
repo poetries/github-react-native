@@ -3941,6 +3941,11 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
+lodash.merge@>=4.6.x:
+  version "4.6.1"
+  resolved "http://r.cnpmjs.org/lodash.merge/download/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
+  integrity sha1-rcJdnLmbk5HFliTzefu6YNcRHVQ=
+
 lodash.pad@^4.1.0:
   version "4.5.1"
   resolved "http://r.cnpmjs.org/lodash.pad/download/lodash.pad-4.5.1.tgz#4330949a833a7c8da22cc20f6a26c4d59debba70"
@@ -4874,7 +4879,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "http://r.cnpmjs.org/prop-types/download/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha1-BdXKd7RFPphdYPx/+MhZCUpJcQI=
@@ -5039,7 +5044,7 @@ react-native-action-button@^2.7.1:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-animatable@^1.2.0:
+react-native-animatable@>=1.3.x, react-native-animatable@^1.2.0:
   version "1.3.0"
   resolved "http://r.cnpmjs.org/react-native-animatable/download/react-native-animatable-1.3.0.tgz#b5c3940fc758cfd9b2fe54613a457c4b6962b46e"
   integrity sha1-tcOUD8dYz9my/lRhOkV8S2litG4=
@@ -5100,12 +5105,25 @@ react-native-dismiss-keyboard@1.0.0:
   resolved "http://r.cnpmjs.org/react-native-dismiss-keyboard/download/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
   integrity sha1-MohiQrPyMX4SHzrrmwpYXiuHm0k=
 
+react-native-drawer-layout@^2.0.0:
+  version "2.0.0"
+  resolved "http://r.cnpmjs.org/react-native-drawer-layout/download/react-native-drawer-layout-2.0.0.tgz#8ce1e4027bd3f3a09045afdb46080e18346be232"
+  integrity sha1-jOHkAnvT86CQRa/bRggOGDRr4jI=
+
 react-native-drawer-layout@~1.3.0:
   version "1.3.2"
   resolved "http://r.cnpmjs.org/react-native-drawer-layout/download/react-native-drawer-layout-1.3.2.tgz#b9740d7663a1dc4f88a61b9c6d93d2d948ea426e"
   integrity sha1-uXQNdmOh3E+IphucbZPS2UjqQm4=
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
+
+react-native-drawer@^2.5.1:
+  version "2.5.1"
+  resolved "http://r.cnpmjs.org/react-native-drawer/download/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"
+  integrity sha1-CLkxQYT0jHJPG0Z/iFl5c2l5hlQ=
+  dependencies:
+    prop-types "^15.5.8"
+    tween-functions "^1.0.1"
 
 react-native-dropdown@^0.0.6:
   version "0.0.6"
@@ -5185,6 +5203,13 @@ react-native-looped-carousel@^0.1.7:
     lodash.isequal "^4.5.0"
     prop-types "^15.6.1"
 
+react-native-material-menu@^0.4.2:
+  version "0.4.2"
+  resolved "http://r.cnpmjs.org/react-native-material-menu/download/react-native-material-menu-0.4.2.tgz#1dc39c1744ef65d5e536badd5e4d6d640b1f43da"
+  integrity sha1-HcOcF0TvZdXlNrrdXk1tZAsfQ9o=
+  dependencies:
+    prop-types "^15.6.0"
+
 react-native-menu@^0.23.0:
   version "0.23.0"
   resolved "http://r.cnpmjs.org/react-native-menu/download/react-native-menu-0.23.0.tgz#3c023239aed95d419275df50c199982ad7eb062b"
@@ -5229,10 +5254,10 @@ react-native-scrollable-mixin@^1.0.0:
   resolved "http://r.cnpmjs.org/react-native-scrollable-mixin/download/react-native-scrollable-mixin-1.0.1.tgz#34a32167b64248594154fd0d6a8b03f22740548e"
   integrity sha1-NKMhZ7ZCSFlBVP0NaosD8idAVI4=
 
-react-native-scrollable-tab-view@^0.7.0:
-  version "0.7.4"
-  resolved "http://r.cnpmjs.org/react-native-scrollable-tab-view/download/react-native-scrollable-tab-view-0.7.4.tgz#623a047cbfab35a27b8689095af524e9aac74b62"
-  integrity sha1-YjoEfL+rNaJ7hokJWvUk6arHS2I=
+react-native-scrollable-tab-view@^0.5.3:
+  version "0.5.5"
+  resolved "http://r.cnpmjs.org/react-native-scrollable-tab-view/download/react-native-scrollable-tab-view-0.5.5.tgz#851f47c3db03737fa6fa7766ed31c7d09557898d"
+  integrity sha1-hR9Hw9sDc3+m+ndm7THH0JVXiY0=
   dependencies:
     react-static-container "^1.0.1"
     react-timer-mixin "^0.13.3"
@@ -5241,6 +5266,14 @@ react-native-search-box@^0.0.9:
   version "0.0.9"
   resolved "http://r.cnpmjs.org/react-native-search-box/download/react-native-search-box-0.0.9.tgz#c1677e127d6d2b346850b031b2cb216447fa66f0"
   integrity sha1-wWd+En1tKzRoULAxssshZEf6ZvA=
+
+react-native-search-header@^0.3.0:
+  version "0.3.0"
+  resolved "http://r.cnpmjs.org/react-native-search-header/download/react-native-search-header-0.3.0.tgz#222c59a9686b82f745f8633a8f27b7c586dcd96a"
+  integrity sha1-IixZqWhrgvdF+GM6jye3xYbc2Wo=
+  dependencies:
+    lodash.merge ">=4.6.x"
+    react-native-animatable ">=1.3.x"
 
 react-native-share@^1.0.20:
   version "1.1.3"
@@ -5251,6 +5284,13 @@ react-native-side-menu@^0.20.1:
   version "0.20.3"
   resolved "http://r.cnpmjs.org/react-native-side-menu/download/react-native-side-menu-0.20.3.tgz#5dffe3e237018360ed081433d505ea454cba9ca4"
   integrity sha1-Xf/j4jcBg2DtCBQz1QXqRUy6nKQ=
+
+react-native-side-menu@^1.1.3:
+  version "1.1.3"
+  resolved "http://r.cnpmjs.org/react-native-side-menu/download/react-native-side-menu-1.1.3.tgz#6ef5d2232ecf718312df6cedef019148bac3073a"
+  integrity sha1-bvXSIy7PcYMS32zt7wGRSLrDBzo=
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-simple-toast@0.0.6:
   version "0.0.6"

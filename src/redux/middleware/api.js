@@ -59,37 +59,15 @@ const callApi = (endpoint, schema, query = null, isDownload = false) => {
   
     method.toLowerCase() === 'post' && (delete config.headers)
     
+    Toast.loading('加载中...',0)
     return fetch(API_ROOT+fullUrl,data)
               .then(response=>response.json())
-              .then(response=>Promise.resolve(response))
-
-    return axios(config).then(
-        res => {
-            Toast.info(API_ROOT + fullUrl)
-            if(res.status === 204){
-                return {}
-            }
-            const json = camelizeKeys(res.data)
-
-            if (json.code !== 0) {
-                return Promise.reject({data: json})
-            }
-            const camelizedJson = camelizeKeys(json.data)
-            if (typeof schema === 'object') {
-                return Object.assign({},
-                    normalize(camelizedJson, schema)
-                )
-            } else if (typeof schema === 'string') {
-                return Object.assign({}, {
-                    [schema]: camelizedJson
-                }, {})
-            }
-            return json
-        },
-        error => {
-            return Promise.reject(camelizeKeys(error.response))
-        }
-    )
+              .then(response=>{
+                Toast.hide()
+                  return Promise.resolve(response)
+              }).catch(error=>{
+                Toast.fail('服务异常',2)
+              })
 }
 
 

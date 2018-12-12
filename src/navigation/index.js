@@ -12,6 +12,12 @@ import AppConfig from '../constants/config';
 import AppSizes from '../theme/sizes';
 import AppStyles from '../theme/styles';
 import TabIcon from '../components/TabIcon';
+import SortKeyPanel from '../components/sideMenu/SortKeyPanel';
+import CustomKeyPanel from '../components/sideMenu/CustomKeyPanel';
+import RemoveKeyPanel from '../components/sideMenu/RemoveKeyPanel';
+import CustomThemePanel from '../components/sideMenu/CustomThemePanel';
+import AboutAuthorPanel from '../components/sideMenu/AboutAuthorPanel';
+import FeedBackPanel from '../components/sideMenu/FeedBackPanel';
 
 const navbarPropsTabs = {
     ...AppConfig.navbarProps,
@@ -23,37 +29,37 @@ const navbarPropsTabs = {
 
   export default Actions.create(
     <Scene key="root" {...AppConfig.navbarProps}>
-      <Scene key="tabs" initial={'tabBar'} hideNavBar tabs tabBarIconContainerStyle={AppStyles.tabbar} pressOpacity={0.95}>
+      <Scene key="tabs" initial={'tabBar'}  tabs tabBarIconContainerStyle={AppStyles.tabbar} pressOpacity={0.95}>
         <Scene
-         navBar={()=><Header
-            leftComponent={
-              <Icon
-              name='menu'
-              type='EvilIcons'
-              color="#fff"
-              underlayColor="#03a9f4"
-              onPress={()=>Actions.search()}
-            />
-            }
-            centerComponent={{ text: '首页', style: { color: AppStyles.navbarTitle.color} }}
-            // rightComponent={{ icon: 'search', color: AppStyles.navbarTitle.color}}
-            rightComponent={<Icon
-              name='search'
-              type='EvilIcons'
-              color="#fff"
-              underlayColor="#03a9f4"
-              onPress={()=>Actions.search()}
-            />}
-            outerContainerStyles={{ backgroundColor: AppStyles.navbar.backgroundColor }}
-          />}
-          {...navbarPropsTabs}
+        //  navBar={()=><Header
+        //     leftComponent={
+        //       <Icon
+        //       name='menu'
+        //       type='EvilIcons'
+        //       color="#fff"
+        //       underlayColor="#03a9f4"
+        //       onPress={()=>Actions.search()}
+        //     />
+        //     }
+        //     centerComponent={{ text: '首页', style: { color: AppStyles.navbarTitle.color} }}
+        //     // rightComponent={{ icon: 'search', color: AppStyles.navbarTitle.color}}
+        //     rightComponent={<Icon
+        //       name='search'
+        //       type='EvilIcons'
+        //       color="#fff"
+        //       underlayColor="#03a9f4"
+        //       onPress={()=>Actions.search()}
+        //     />}
+        //     outerContainerStyles={{ backgroundColor: AppStyles.navbar.backgroundColor }}
+        //   />}
+          // {...navbarPropsTabs}
+          title="首页"
           key={'home'}
           iconName={'md-home'}
           iconType={'ionicon'}
-          onRight={() => Actions.userCenter()}
-          rightButtonTextStyle={AppStyles.navbarTitle}
           icon={TabIcon}
           component={Home}
+          hideNavBar={true}
           analyticsDesc={' Home '}
         />
         <Scene
@@ -80,7 +86,7 @@ const navbarPropsTabs = {
           {...navbarPropsTabs}
           key={'userCenter'}
           title={'用户中心'}
-          iconName={'md-person-add'}
+          iconName={'md-apps'}
           iconType={'ionicon'}
           icon={TabIcon}
           component={UserCenter}
@@ -95,6 +101,60 @@ const navbarPropsTabs = {
         component={Search}
         analyticsDesc={' searchView '}
       />
+      <Scene
+        {...AppConfig.navbarProps}
+        key={'sortKey'}
+        title={'Sort Key'}
+        rightTitle={'Save'}
+        onRight={() => Actions.pop()}
+        rightButtonTextStyle={{color:'#fff'}}
+        component={SortKeyPanel}
+        analyticsDesc={' sortKey '}
+     />     
+     <Scene
+        {...AppConfig.navbarProps}
+        key={'customKey'}
+        title={'自定义Key'}
+        rightTitle={'Save'}
+        onRight={() => Actions.pop()}
+        rightButtonTextStyle={{color:'#fff'}}
+        component={CustomKeyPanel}
+        analyticsDesc={' customKey '}
+     />     
+     <Scene
+        {...AppConfig.navbarProps}
+        key={'removeKey'}
+        title={'移除Key'}
+        rightTitle={'Save'}
+        onRight={() => Actions.pop()}
+        rightButtonTextStyle={{color:'#fff'}}
+        component={RemoveKeyPanel}
+        analyticsDesc={' removeKey '}
+     />     
+     <Scene
+        {...AppConfig.navbarProps}
+        key={'customTheme'}
+        title={'自定义主题'}
+        rightTitle={'Save'}
+        onRight={() => Actions.pop()}
+        rightButtonTextStyle={{color:'#fff'}}
+        component={CustomThemePanel}
+        analyticsDesc={' customTheme '}
+     />     
+     <Scene
+        {...AppConfig.navbarProps}
+        key={'aboutAuthor'}
+        title={'关于作者'}
+        component={AboutAuthorPanel}
+        analyticsDesc={' aboutAuthor '}
+      />     
+      <Scene
+        {...AppConfig.navbarProps}
+        key={'feedBack'}
+        title={'反馈'}
+        component={FeedBackPanel}
+        analyticsDesc={' feedBack '}
+      />     
 
     </Scene>
   )
