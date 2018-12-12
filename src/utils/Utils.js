@@ -16,4 +16,16 @@ export default class Utils {
         }
         return false;
     }
+    static randomColor(){
+       const randomHexColor = ()=>{
+            return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6)
+       }
+
+        let arr = []
+        for(let i=0;i<200;i++){
+            arr.push(randomHexColor())
+        }
+        return arr;
+    }
 }
+

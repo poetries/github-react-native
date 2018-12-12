@@ -10,7 +10,7 @@ import {
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view'
 import { List, ListItem,Header,Icon } from 'react-native-elements'
 import queryKeys from '../../config/queryKeys.json'
-import TabView from '../../components/TabView'
+import TabView from '../../components/tabs/TabView'
 import {Tabs} from 'antd-mobile-rn'
 import SideMenu from '../../components/sideMenu/SideMenu'
 import Drawer from 'react-native-drawer'

@@ -11,7 +11,7 @@ import UserCenter from '../containers/user-center/UserCenter';
 import AppConfig from '../constants/config';
 import AppSizes from '../theme/sizes';
 import AppStyles from '../theme/styles';
-import TabIcon from '../components/TabIcon';
+import TabIcon from '../components/tabs/TabIcon';
 import SortKeyPanel from '../components/sideMenu/SortKeyPanel';
 import CustomKeyPanel from '../components/sideMenu/CustomKeyPanel';
 import RemoveKeyPanel from '../components/sideMenu/RemoveKeyPanel';
@@ -125,7 +125,7 @@ const navbarPropsTabs = {
         {...AppConfig.navbarProps}
         key={'removeKey'}
         title={'移除Tab'}
-        rightTitle={'Save'}
+        rightTitle={'Remove'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}
         component={RemoveKeyPanel}

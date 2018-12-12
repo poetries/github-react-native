@@ -5,52 +5,7 @@ import Search from 'react-native-search-box';
 import { connect } from 'react-redux';
 import { List, ListItem,Icon } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux';
-
-const menuConfig = [
-  {
-    title: 'Tab排序',
-    icon: 'sort',
-    type: 'MaterialIcons',
-    action: ()=>Actions.sortKey()
-  },
-  {
-    title: '自定义Tab',
-    icon: 'flight-takeoff',
-    type: 'MaterialIcons',
-    action: ()=>Actions.customKey()
-  },
-  {
-    title: '移除Tab',
-    icon: 'delete',
-    type: 'MaterialCommunityIcons',
-    action: ()=>Actions.removeKey()
-  },
-  {
-    title: '自定义主题',
-    icon: 'settings',
-    type: 'Feather',
-    action: ()=>Actions.customTheme()
-  },
-  {
-    title: '关于作者',
-    icon: 'person-pin',
-    type: 'MaterialIcons',
-    action: ()=>Actions.aboutAuthor()
-  },
-  {
-    title: '反馈',
-    icon: 'feedback',
-    type: 'MaterialIcons',
-    action: ()=>Actions.feedBack()
-  },
-  {
-    title: '分享',
-    icon: 'share',
-    type: 'MaterialIcons',
-    action: ()=>Actions.feedBack()
-  }
-]
-
+import { sideMenuConfig } from '../../config/sideMenu'
 
 export default class SideMenu extends Component {
   static componentName = 'SideMenu';
@@ -67,7 +22,7 @@ export default class SideMenu extends Component {
     return (
       <List containerStyle={{borderBottomColor: '#fff',backgroundColor:this.props.theme}}>
           {
-            menuConfig.map((item) => (
+            sideMenuConfig.map((item) => (
               <ListItem
                 key={item.title}
                 title={item.title}
