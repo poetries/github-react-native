@@ -5325,6 +5325,11 @@ react-native-splash-screen@^2.0.0:
   resolved "http://r.cnpmjs.org/react-native-splash-screen/download/react-native-splash-screen-2.1.0.tgz#4e0a5e4e8c32974fe7a3cdb4d9a226d06d9daf4f"
   integrity sha1-TgpeTowyl0/no8202aIm0G2dr08=
 
+react-native-storage@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "http://r.cnpmjs.org/react-native-storage/download/react-native-storage-1.0.0-beta.1.tgz#12acc0450e63a65ac95430196c04270edcf7b0be"
+  integrity sha1-EqzARQ5jplrJVDAZbAQnDtz3sL4=
+
 react-native-store-review@^0.1.2:
   version "0.1.5"
   resolved "http://r.cnpmjs.org/react-native-store-review/download/react-native-store-review-0.1.5.tgz#9df69786a137580748e368641698d2104519e4cf"

@@ -8,19 +8,19 @@ import { Actions } from 'react-native-router-flux';
 
 const menuConfig = [
   {
-    title: 'Key排序',
+    title: 'Tab排序',
     icon: 'sort',
     type: 'MaterialIcons',
     action: ()=>Actions.sortKey()
   },
   {
-    title: '自定义Key',
+    title: '自定义Tab',
     icon: 'flight-takeoff',
     type: 'MaterialIcons',
     action: ()=>Actions.customKey()
   },
   {
-    title: '移除Key',
+    title: '移除Tab',
     icon: 'delete',
     type: 'MaterialCommunityIcons',
     action: ()=>Actions.removeKey()

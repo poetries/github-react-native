@@ -104,7 +104,7 @@ const navbarPropsTabs = {
       <Scene
         {...AppConfig.navbarProps}
         key={'sortKey'}
-        title={'Sort Key'}
+        title={'Sort Tab'}
         rightTitle={'Save'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}
@@ -114,7 +114,7 @@ const navbarPropsTabs = {
      <Scene
         {...AppConfig.navbarProps}
         key={'customKey'}
-        title={'自定义Key'}
+        title={'自定义Tab'}
         rightTitle={'Save'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}
@@ -124,7 +124,7 @@ const navbarPropsTabs = {
      <Scene
         {...AppConfig.navbarProps}
         key={'removeKey'}
-        title={'移除Key'}
+        title={'移除Tab'}
         rightTitle={'Save'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}

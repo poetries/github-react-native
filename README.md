@@ -13,3 +13,7 @@ Github客户端
 - [x] 支持搜索,并自持自定义订阅关键字;
 - [x] 支持分享,轻松将自己喜欢的项目分享给好友;
 
+screenShot
+---
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-673887b9b32b7540.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
