@@ -18,6 +18,9 @@ import RemoveKeyPanel from '../components/sideMenu/RemoveKeyPanel';
 import CustomThemePanel from '../components/sideMenu/CustomThemePanel';
 import AboutAuthorPanel from '../components/sideMenu/AboutAuthorPanel';
 import FeedBackPanel from '../components/sideMenu/FeedBackPanel';
+import customLanguagePanel from '../components/user-center/customLanguagePanel';
+import pupularPanel from '../components/user-center/pupularPanel';
+import SortLanguagePanel from '../components/user-center/SortLanguagePanel';
 
 const navbarPropsTabs = {
     ...AppConfig.navbarProps,
@@ -104,7 +107,7 @@ const navbarPropsTabs = {
       <Scene
         {...AppConfig.navbarProps}
         key={'sortKey'}
-        title={'Sort Tab'}
+        title={'Sort Key'}
         rightTitle={'Save'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}
@@ -114,7 +117,7 @@ const navbarPropsTabs = {
      <Scene
         {...AppConfig.navbarProps}
         key={'customKey'}
-        title={'自定义Tab'}
+        title={'自定义Key'}
         rightTitle={'Save'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}
@@ -124,7 +127,7 @@ const navbarPropsTabs = {
      <Scene
         {...AppConfig.navbarProps}
         key={'removeKey'}
-        title={'移除Tab'}
+        title={'移除Key'}
         rightTitle={'Remove'}
         onRight={() => Actions.pop()}
         rightButtonTextStyle={{color:'#fff'}}
@@ -145,6 +148,16 @@ const navbarPropsTabs = {
         {...AppConfig.navbarProps}
         key={'aboutAuthor'}
         title={'关于作者'}
+        renderRightButton ={
+          ()=><Icon
+              name='share'
+              type='MaterialIcons'
+              color="#fff"
+              size={20}
+              underlayColor="#03a9f4"
+              onPress={()=>Actions.search()}
+            />
+        }
         component={AboutAuthorPanel}
         analyticsDesc={' aboutAuthor '}
       />     
@@ -155,7 +168,28 @@ const navbarPropsTabs = {
         component={FeedBackPanel}
         analyticsDesc={' feedBack '}
       />     
-
+      <Scene
+        {...AppConfig.navbarProps}
+        key={'customLanguage'}
+        title={'自定义语言'}
+        component={customLanguagePanel}
+        analyticsDesc={' customLanguage '}
+      />     
+      <Scene
+        {...AppConfig.navbarProps}
+        key={'pupularPanel'}
+        title={'Github Pupular'}
+        component={pupularPanel}
+        analyticsDesc={' pupularPanel '}
+      />     
+      <Scene
+        {...AppConfig.navbarProps}
+        key={'sortLanguage'}
+        title={'语言排序'}
+        component={SortLanguagePanel}
+        analyticsDesc={' sortLanguage '}
+      />     
+      
     </Scene>
   )
 

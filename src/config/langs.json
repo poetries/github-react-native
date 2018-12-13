@@ -14,12 +14,12 @@
       "path": "as3",
       "name": "ActionScript",
       "short_name": "AS",
-      "checked": true
+      "checked": false
     },
     {
       "path": "apacheconf",
       "name": "ApacheConf",
-      "checked": true
+      "checked": false
     },
     {
       "path": "nasm",
@@ -36,7 +36,7 @@
     {
       "path": "c",
       "name": "C",
-      "checked": false
+      "checked": true
     },
     {
       "path": "csharp",
@@ -56,7 +56,7 @@
     {
       "path": "css",
       "name": "CSS",
-      "checked": false
+      "checked": true
     },
     {
       "path": "clojure",
@@ -87,7 +87,7 @@
     {
       "path": "dart",
       "name": "Dart",
-      "checked": false
+      "checked": true
     },
     {
       "path": "elixir",
@@ -119,7 +119,7 @@
     {
       "path": "go",
       "name": "Go",
-      "checked": false
+      "checked": true
     },
     {
       "path": "groovy",
@@ -129,7 +129,7 @@
     {
       "path": "html",
       "name": "HTML",
-      "checked": false
+      "checked": true
     },
     {
       "path": "haskell",
@@ -150,13 +150,13 @@
     {
       "path": "java",
       "name": "Java",
-      "checked": false
+      "checked": true
     },
     {
       "path": "javascript",
       "short_name": "JS",
       "name": "JavaScript",
-      "checked": false
+      "checked": true
     },
     {
       "path": "julia",
@@ -166,7 +166,7 @@
     {
       "path": "kotlin",
       "name": "Kotlin",
-      "checked": false
+      "checked": true
     },
     {
       "path": "livescript",
@@ -177,7 +177,7 @@
     {
       "path": "lua",
       "name": "Lua",
-      "checked": false
+      "checked": true
     },
     {
       "path": "makefile",
@@ -219,7 +219,7 @@
     {
       "path": "php",
       "name": "PHP",
-      "checked": false
+      "checked": true
     },
     {
       "path": "plsql",
@@ -249,7 +249,7 @@
     {
       "path": "python",
       "name": "Python",
-      "checked": false
+      "checked": true
     },
     {
       "path": "qml",
@@ -259,12 +259,12 @@
     {
       "path": "r",
       "name": "R",
-      "checked": false
+      "checked": true
     },
     {
       "path": "ruby",
       "name": "Ruby",
-      "checked": false
+      "checked": true
     },
     {
       "path": "rust",
@@ -284,7 +284,7 @@
     {
       "path": "bash",
       "name": "Shell",
-      "checked": false
+      "checked": true
     },
     {
       "path": "supercollider",

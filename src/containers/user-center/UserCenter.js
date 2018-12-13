@@ -19,35 +19,40 @@ class UserCenter extends Component {
   }
   renderList(){
     const content = []
-    Object.keys(userCenterConfig).forEach(key=>{
-      content.push(
-        <List containerStyle={{marginBottom: 0}} key={key}>
-            {
-              userCenterConfig[key].map((item,index) => (
-                <ListItem
-                  key={index}
-                  title={item.title}
-                  leftIcon={<Icon
-                    containerStyle={{paddingRight:10}}
-                    name={item.icon}
-                    type={item.type}
-                    // color="#fff"
-                  />}
-                  onPress={()=>item.action?item.action():null}
-                  // rightIcon={{color:'#fff'}}
-                />
-              ))
-            }
-          </List>
-      )
+    Object.keys(userCenterConfig).forEach((key,index)=>{
+        let list = <List containerStyle={{marginTop: 0}} key={key}>
+          {
+            userCenterConfig[key].children.map((item,index) => (
+              <ListItem
+                key={index}
+                title={item.title}
+                leftIcon={<Icon
+                  containerStyle={{paddingRight:10}}
+                  name={item.icon}
+                  type={item.type}
+                  // color="#fff"
+                />}
+                onPress={()=>item.action?item.action():null}
+                // rightIcon={{color:'#fff'}}
+              />
+            ))
+          }
+        </List>
+        if( userCenterConfig[key].title){
+          list = <View key={index}>
+              <Text style={{color: '#696262',paddingTop:15,paddingBottom:5,paddingLeft:5}}>{userCenterConfig[key].title}</Text>
+              {list}
+          </View>
+        }
+      content.push(list )
     })
     return content
   }
   render() {
     return  (
-      <View>
+      <ScrollView>
           {this.renderList()}
-      </View>
+      </ScrollView>
     )
   }
 }

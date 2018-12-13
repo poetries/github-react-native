@@ -2,27 +2,27 @@ import { Actions } from 'react-native-router-flux';
 
 export const sideMenuConfig = [
     {
-      title: 'Tab排序',
+      title: 'Key排序',
       icon: 'sort',
       type: 'MaterialIcons',
       action: ()=>Actions.sortKey()
     },
     {
-      title: '自定义Tab',
-      icon: 'flight-takeoff',
+      title: '自定义Key',
+      icon: 'restaurant-menu',
       type: 'MaterialIcons',
       action: ()=>Actions.customKey()
     },
     {
-      title: '移除Tab',
+      title: '移除Key',
       icon: 'delete',
       type: 'MaterialCommunityIcons',
       action: ()=>Actions.removeKey()
     },
     {
       title: '自定义主题',
-      icon: 'settings',
-      type: 'Feather',
+      icon: 'palette',
+      type: 'MaterialIcons',
       action: ()=>Actions.customTheme()
     },
     {

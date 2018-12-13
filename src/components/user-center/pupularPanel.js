@@ -13,8 +13,8 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 const {authorInfo} = userCenterConfig.settings.children[1]
 const window = Dimensions.get('window');
 
-export default class AboutAuthorPanel extends Component {
-  static componentName = 'CustomKeyPanel';
+export default class pupularPanel extends Component {
+  static componentName = 'pupularPanel';
 
   constructor(props) {
     super(props);
