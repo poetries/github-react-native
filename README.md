@@ -1,9 +1,10 @@
 Github客户端
 ---
+> 正在开发中...
 
 > 使用`React native`开发`GitHub`客户端，适配`IOS`、`Android`。
 
-功能
+TODO
 ---
 
 - [x] 支持订阅多种编程语法
