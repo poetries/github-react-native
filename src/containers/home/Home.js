@@ -15,6 +15,7 @@ import {Tabs} from 'antd-mobile-rn'
 import SideMenu from '../../components/sideMenu/SideMenu'
 import Drawer from 'react-native-drawer'
 import AppStyles from '../../theme/styles';
+import storage from '../../utils/Storage'
 
 const tabs = queryKeys.map(v=>({title:v.name}))
 
@@ -41,6 +42,14 @@ export default class Home extends Component {
 
   componentDidMount(){
     this.props.fetchGithubList('all')
+
+    storage.load({
+      key:'themeConfig',
+      autoSync: true,
+      syncInBackground: true,
+      syncInBackground: true
+    }).then(res=>this.setState({theme:res.bg}))
+
   }
   renderHeader(){
     return <Header

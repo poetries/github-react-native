@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars,global-require */
 import React, { Component } from 'react';
-import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator,TouchableOpacity } from 'react-native';
 import Search from 'react-native-search-box';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { List, ListItem,Icon,ButtonGroup } from 'react-native-elements'
 import Utils from '../../utils/Utils'
+import storage from '../../utils/Storage'
 
 const randomColor16 = Utils.randomColor()
 
@@ -18,16 +19,35 @@ export default class CustomThemePanel extends Component {
      
     }
   }
+  saveThemeSetting=(v)=>{
+    storage.save({
+      key: 'themeConfig',
+      data: {
+        bg: v
+      }
+    })
+  }
+  componentDitMount(){
+    storage.load({
+      key:'themeConfig',
+      autoSync: true,
+      syncInBackground: true,
+      syncInBackground: true
+    }).then(res=>console.log(res.bg,'===='))
+  }
   render() {
-
     return  (
       <ScrollView style={{marginTop:-15}}>
-            <View style={ {flexWrap:'wrap',justifyContent:'space-around',flexDirection:'row',marginTop:20}}>
+            <View style={ {flexWrap:'wrap',justifyContent:'space-around',alignItems:'center',flexDirection:'row',marginTop:20}}>
                  {
                   randomColor16.map((v,index)=>{
-                     return  <View key={index} style={ {width:80,height:80,backgroundColor:v,margin:5}}>
-                     <Text style={ {fontSize:16}}>{v}</Text>
-                </View>
+                     return  <TouchableOpacity  onPress={()=>this.saveThemeSetting(v)} key={index}>
+                        <View 
+                            style={ {justifyContent:'center',alignItems:'center',width:80,height:80,backgroundColor:v,margin:5}}
+                          >
+                            <Text style={ {fontSize:16,color:'#fff'}}>{v}</Text>
+                        </View>
+                     </TouchableOpacity>
                    })
                  }
             </View>
