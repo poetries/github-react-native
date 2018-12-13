@@ -117,10 +117,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   avatar: {
-      width: 100,
-      height: 100,
+      width: 90,
+      height: 90,
       marginBottom: 5,
-      borderRadius: 100 / 2
+      borderRadius: 90 / 2
   },
   sectionSpeakerText: {
       color: 'white',

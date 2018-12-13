@@ -63,10 +63,36 @@ export const userCenterConfig = {
             action: ()=>Actions.aboutAuthor(),
             authorInfo: {
                 name: "poetries",
+                projectName: 'Github Popular',
+                projectDesc: '一个用来查看GitHub最受欢迎与最热项目的App,基于React Native支持Android和iOS',
                 description: "专注前端开发",
                 avatar: "https://blog.poetries.top/images/avatar.jpg",
                 aboutAuthorPost: "https://upload-images.jianshu.io/upload_images/1480597-b24faa3975738e54.png",
-                url: "http://blog.poetries.top/"
+                aboutPupularPost: "https://upload-images.jianshu.io/upload_images/1480597-e5f0d07312f5cb26.png",
+                popularLogo: "https://upload-images.jianshu.io/upload_images/1480597-11979675a21a8e1d.png",
+                url: "http://blog.poetries.top/",
+                popularSettings: [
+                    {
+                        title: '博客',
+                        url: 'http://blog.poetries.top',
+                        icon: 'camera',
+                        type: 'MaterialIcons',
+                        action: ()=>Actions.webView({url:'https://blog.poetries.top',title:'博客'})
+                    },
+                    {
+                        title: '关于作者',
+                        key: 'author',
+                        icon: 'school',
+                        type: 'MaterialIcons',
+                        action: ()=>Actions.aboutAuthor()
+                    },
+                    {
+                        title: '反馈',
+                        icon: 'feedback',
+                        type: 'MaterialIcons',
+                        action: ()=>Actions.feedBack()
+                      }
+                ]
             },
             children: [
                 {
@@ -76,7 +102,7 @@ export const userCenterConfig = {
                     children: [
                         {
                             title: '个人博客',
-                            url: 'http://blogpoetries.top'
+                            url: 'http://blog.poetries.top'
                         },
                         {
                             title: '简书',

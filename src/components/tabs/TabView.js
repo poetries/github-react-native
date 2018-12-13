@@ -19,7 +19,7 @@ export default class TabView extends Component {
   }
 
   render() {
-    const {queryKeys} = this.props
+    const {queryKeys,fetchGithubList} = this.props
  
     return   <ScrollableTabView
             style={{marginTop: 60}}
@@ -29,7 +29,7 @@ export default class TabView extends Component {
             tabBarBackgroundColor={this.props.theme}
             tabBarActiveTextColor='white'
             initialPage={0}
-            onChangeTab={(tab)=>this.props.fetchGithubList(tab.ref.props.tabLabel)}
+            onChangeTab={(tab)=>fetchGithubList && fetchGithubList(tab.ref.props.tabLabel)}
             renderTabBar={() => <ScrollableTabBar style={{height: 40,borderWidth:0,elevation:2}} tabStyle={{height: 39}}
             underlineHeight={2}/>}
     >

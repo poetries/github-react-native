@@ -10,7 +10,9 @@ import { userCenterConfig } from '../../config/userCenterConfig'
 import { Accordion, List as AntList } from 'antd-mobile-rn';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
-const {authorInfo} = userCenterConfig.settings.children[1]
+const { authorInfo } = userCenterConfig.settings.children[1]
+const { popularSettings } = authorInfo
+
 const window = Dimensions.get('window');
 
 export default class pupularPanel extends Component {
@@ -27,36 +29,26 @@ export default class pupularPanel extends Component {
     this.setState({ activeSections });
   }
   renderRow(){
-    const content = <Accordion
-          style={{backgroundColor:'#fff'}}
-          onChange={this.onChange}
-          activeSections={this.state.activeSections}
-      >
-          {
-              userCenterConfig['settings'].children[1].children.map(v=>{
-                return  <Accordion.Panel  key={v.title} header={
-                  <View style={{flexDirection:'row'}}>
-                      <Icon
-                      name={v.icon}
-                      type={v.type}
-                    />
-                      <Text style={{padding:15,paddingRight:235}}>{v.title}</Text>
-                  </View>
-                }>
-                      {
-                              <AntList>
-                                  {
-                                    v.children.map(vv=> <AntList.Item arrow='horizontal' key={vv.title} style={{backgroundColor:'#fdfbfb'}}><Text style={{fontSize:14,paddingLeft:40}}>{vv.title}</Text></AntList.Item>)
-                                  }
-                              </AntList>
-                      }
-                </Accordion.Panel>
-              })
-          }
-    </Accordion>
-    
-    return content
-  }
+    return <List>
+    {
+      popularSettings.map((item) => (
+        <ListItem
+          key={item.title}
+          title={item.title}
+          leftIcon={<Icon
+            containerStyle={{paddingRight:10}}
+            name={item.icon}
+            type={item.type}
+            // color="#fff"
+          />}
+          onPress={()=>item.action?item.action():null}
+          // rightIcon={{color:'#fff'}}
+          // titleStyle={{color:'#fff'}}
+        />
+      ))
+    }
+</List> 
+}
   render() {
     return  (
       <ParallaxScrollView
@@ -69,19 +61,19 @@ export default class pupularPanel extends Component {
         backgroundSpeed={10}
         renderForeground={() => (
           <View style={ styles.bgCon }>
-              <Image style={styles.avatar} source={{uri: authorInfo.avatar}}/>
+              <Image style={styles.avatar} source={{uri: authorInfo.popularLogo}}/>
               <Text style={ styles.sectionSpeakerText }>
-                  { authorInfo.name }
+                  { authorInfo.projectName }
               </Text>
               <Text style={ styles.sectionTitleText }>
-                  { authorInfo.description }
+                  { authorInfo.projectDesc }
               </Text>
            </View>
        )}
       renderBackground={()=>(
         <View>
             <Image source={{
-                uri: authorInfo.aboutAuthorPost,
+                uri: authorInfo.aboutPupularPost,
                 width: window.width,
                 height: 200
             }}/>
@@ -96,7 +88,7 @@ export default class pupularPanel extends Component {
       ) }
       renderStickyHeader={()=>(
         <View key="sticky-header" style={styles.stickySection}>
-            <Text style={styles.stickySectionText}>{authorInfo.name}</Text>
+            <Text style={styles.stickySectionText}>{authorInfo.projectName}</Text>
          </View>
       )}
     >
@@ -112,15 +104,15 @@ const styles = StyleSheet.create({
       backgroundColor: 'black'
   },
   bgCon:{
-    padding:20,
+    padding:10,
     justifyContent: 'center',
     alignItems: 'center'
   },
   avatar: {
-      width: 100,
-      height: 100,
+      width: 90,
+      height: 90,
       marginBottom: 5,
-      borderRadius: 100 / 2
+      borderRadius: 90 / 2
   },
   sectionSpeakerText: {
       color: 'white',

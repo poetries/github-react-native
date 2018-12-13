@@ -21,6 +21,8 @@ import FeedBackPanel from '../components/sideMenu/FeedBackPanel';
 import customLanguagePanel from '../components/user-center/customLanguagePanel';
 import pupularPanel from '../components/user-center/pupularPanel';
 import SortLanguagePanel from '../components/user-center/SortLanguagePanel';
+import WebView from '../components/WebView';
+
 
 const navbarPropsTabs = {
     ...AppConfig.navbarProps,
@@ -66,23 +68,25 @@ const navbarPropsTabs = {
           analyticsDesc={' Home '}
         />
         <Scene
-          {...navbarPropsTabs}
+          // {...navbarPropsTabs}
           key={'trending'}
           title={'趋势'}
           iconName={'md-trending-up'}
           iconType={'ionicon'}
           icon={TabIcon}
           component={Trending}
+          hideNavBar={true}
           analyticsDesc={' Trending '}
         />
         <Scene
-          {...navbarPropsTabs}
+          // {...navbarPropsTabs}
           key={'favorite'}
           title={'收藏'}
           iconName={'md-star'}
           iconType={'ionicon'}
           icon={TabIcon}
           component={Favorite}
+          hideNavBar={true}
           analyticsDesc={' Favorite '}
         />
         <Scene
@@ -179,6 +183,16 @@ const navbarPropsTabs = {
         {...AppConfig.navbarProps}
         key={'pupularPanel'}
         title={'Github Pupular'}
+        renderRightButton ={
+          ()=><Icon
+              name='share'
+              type='MaterialIcons'
+              color="#fff"
+              size={20}
+              underlayColor="#03a9f4"
+              onPress={()=>Actions.search()}
+            />
+        }
         component={pupularPanel}
         analyticsDesc={' pupularPanel '}
       />     
@@ -188,6 +202,13 @@ const navbarPropsTabs = {
         title={'语言排序'}
         component={SortLanguagePanel}
         analyticsDesc={' sortLanguage '}
+      />     
+      <Scene
+        {...AppConfig.navbarProps}
+        key={'webView'}
+        title={'webView'}
+        component={WebView}
+        analyticsDesc={' WebView '}
       />     
       
     </Scene>
